@@ -24,7 +24,7 @@ from flask_cors import CORS
 from config import Config
 
 # ---------- app init ----------
-app = Flask(__name__, template_folder='frontend', static_folder='frontend/static')
+app = Flask(__name__, template_folder='frontend/templates', static_folder='frontend/static')
 app.config.from_object(Config)
 
 # DEV: reduce static caching during development (avoid persistent 304s while debugging)
@@ -197,7 +197,13 @@ def _close_fallback_conn(conn_obj):
 # ------------------------
 # Routes
 # ------------------------
-expected_index = os.path.join(app.root_path, app.template_folder, 'index.html')
+expected_index = os.path.join(
+    app.root_path,
+    'frontend',
+    'templates',
+    'index.html'
+)
+
 
 @app.route('/')
 def index():
