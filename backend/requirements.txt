@@ -1,7 +1,8 @@
 Flask==2.3.3
 Flask-MySQLdb==2.0.0
+PyMySQL==1.1.0
+Flask-Mail==0.9.1
 Flask-Cors==3.0.10
 python-dotenv==1.0.1
 Werkzeug==2.3.7
 gunicorn==21.2.0
-PyMySQL==1.1.0
